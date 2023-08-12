@@ -2,7 +2,7 @@ function reload() {
     var cookie = document.getElementById("cookie").value;
     console.log(cookie)
     if (cookie != "") {
-        document.cookie = "schuelerportal_session=" + cookie + "; SameSite=None;"
+        document.cookie = "schuelerportal_session=" + cookie + "; SameSite=None; Secure;"
         //document.cookie = "schuelerportal_school=clagybam; path=/; SameSite=None; Secure;";
     }
     
