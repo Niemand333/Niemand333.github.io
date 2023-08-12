@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook</title>
+
+    <link rel="stylesheet" href="design.css">
+  </head>
+  <body>
+    <h1 class="header">Discord Webhook</h1>
+    <div class="text">
+        <form name="discordForm" action="" method="GET">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+            <label for="Avatar">Avatar URL:</label>
+            <input type="url" name="avatar" id="avatar">
+            <label for="message">Message:</label>
+            <input type="text" name="message" id="message">
+            <input type="button" name="button" value="Send" onClick="sendMessage(this.form)">
+        </form>
+    </div>
+  </body>
+
+  <script>
+    function testResults (form) {
+          var inputValue = form.inputbox.value;
+          alert ("You typed: " + inputValue);
+      }
+
+
+    function sendMessage(form) {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: form.username.value,
+        avatar_url: form.avatar.value,
+        content: form.message.value
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
