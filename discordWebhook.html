@@ -10,14 +10,22 @@
   <body>
     <h1 class="header">Discord Webhook</h1>
     <div class="text">
-        <form name="discordForm" action="" method="GET">
-            <label for="username">Username:</label>
+      <form name="discordForm" action="" method="GET">
+        <p>
+            <label for="username">Username:&nbsp;&nbsp;</label>
             <input type="text" name="username" id="username">
+        </p>
+        <p>
             <label for="Avatar">Avatar URL:</label>
             <input type="url" name="avatar" id="avatar">
-            <label for="message">Message:</label>
+          </p>
+          <p>
+            <label for="message">Message:&nbsp;&nbsp;&nbsp;</label>
             <input type="text" name="message" id="message">
+          </p>
+          <p>
             <input type="button" name="button" value="Send" onClick="sendMessage(this.form)">
+          </p>
         </form>
     </div>
   </body>
