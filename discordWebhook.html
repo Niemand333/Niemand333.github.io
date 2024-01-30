@@ -11,6 +11,14 @@
     <h1 class="header">Discord Webhook</h1>
     <div class="text">
       <form name="discordForm" action="" method="GET">
+
+        <p>
+            <label for="channels">Select Channel:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select name="channels" id="channels">
+              <option value="https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf">allgemein</option>
+              <option value="https://discord.com/api/webhooks/1201813127004688454/em1JpyNxCUZ514_1DpkLk0bdvW1S8dF7x55eNgUoHiR5Ngtm-Y0QUcPBfeLNQep_IPxG">zitate</option>
+            </select>
+        <p>
         <p>
             <label for="username">Username:&nbsp;&nbsp;</label>
             <input type="text" name="username" id="username">
@@ -26,6 +34,7 @@
           <p>
             <input type="button" name="button" value="Send" onClick="sendMessage(this.form)">
           </p>
+
         </form>
     </div>
   </body>
@@ -39,7 +48,7 @@
 
     function sendMessage(form) {
       const request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf");
+      request.open("POST", form.channels.value); //"https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf"
 
       request.setRequestHeader('Content-type', 'application/json');
 
