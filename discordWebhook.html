@@ -59,6 +59,10 @@
       }
 
       request.send(JSON.stringify(params));
+
+      form.username.value = "";
+      form.avatar.value = "";
+      form.message.value = "";
     }
   </script>
 </html>
