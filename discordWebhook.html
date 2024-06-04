@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Webhook</title>
 
-    <link rel="stylesheet" href="design.css">
-  </head>
-  <body>
-    <h1 class="header">Discord Webhook</h1>
-    <div class="text">
-      <form name="discordForm" action="" method="GET">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discord Webhook</title>
 
-        <p>
-            <label for="channels">Select Channel:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <select name="channels" id="channels">
-              <option value="https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf">allgemein</option>
-              <option value="https://discord.com/api/webhooks/1201813127004688454/em1JpyNxCUZ514_1DpkLk0bdvW1S8dF7x55eNgUoHiR5Ngtm-Y0QUcPBfeLNQep_IPxG">zitate</option>
-            </select>
-        <p>
-        <p>
-            <label for="username">Username:&nbsp;&nbsp;</label>
-            <input type="text" name="username" id="username">
-        </p>
-        <p>
-            <label for="Avatar">Avatar URL:</label>
-            <input type="url" name="avatar" id="avatar">
-          </p>
-          <p>
-            <label for="message">Message:&nbsp;&nbsp;&nbsp;</label>
-            <input type="text" name="message" id="message">
-          </p>
-          <p>
-            <input type="button" name="button" value="Send" onClick="sendMessage(this.form)">
-          </p>
+	<link rel="stylesheet" href="design.css">
+	<link rel="stylesheet" href="discordWebhook.css">
+	<link rel="stylesheet" href="sidebar.css">
+</head>
 
-        </form>
-    </div>
-  </body>
+<body>
 
-  <script>
-    function testResults (form) {
-          var inputValue = form.inputbox.value;
-          alert ("You typed: " + inputValue);
-      }
+	<div class="sidebar">
+		<a href="/">Home</a>
+		<a class="active" href="/discordWebhook.html">W.H.</a>
+		<a href="/discordBot.html">Bot</a>
+	</div>
+
+	<div class="content">
+
+		<h1 class="header">Discord Webhook</h1>
+
+		<form name="discordForm" action="" method="GET">
+			<div class="form-grid">
+				
+				<select class="channels" name="channels" id="channels">
+					<option
+						value="https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf">
+						allgemein</option>
+					<option
+						value="https://discord.com/api/webhooks/1201813127004688454/em1JpyNxCUZ514_1DpkLk0bdvW1S8dF7x55eNgUoHiR5Ngtm-Y0QUcPBfeLNQep_IPxG">
+						zitate</option>
+				</select>
+				
+				<img src="https://cdn.discordapp.com/embed/avatars/0.png" id="avatar-preview" onclick="avatar_onclick();">
+					
+				<div class="username">
+					<label for="username">Username:&nbsp;&nbsp;</label>
+					<input type="text" name="username" id="username" class="text-input">
+				</div>
+				<div class="avatar">
+					<label for="Avatar">Avatar URL:</label>
+					<input type="url" name="avatar" id="avatar" class="text-input">
+					<button type="button" onclick="avatar_popup_ok();">ok</button>
+				</div>
+				<div class="message">
+					<label for="message" >Message:&nbsp;&nbsp;&nbsp;</label>
+					<input type="text" name="message" id="message" class="text-input">
+				</div>
+				
+				<input class="submit" type="button" name="button" value="Send" onClick="sendMessage(this.form)">
+				
+			</div>
+		</form>
 
 
-    function sendMessage(form) {
-      const request = new XMLHttpRequest();
-      request.open("POST", form.channels.value); //"https://discord.com/api/webhooks/1139984568674418758/187hMMAZXhgVcXuQpLvukih5TDRq2UidnnadT9obCqsz1tcgFkq4kmi36aGBXRzJ1Baf"
+	</div>
+	<script src="discordWebhook.js"></script>
+</body>
 
-      request.setRequestHeader('Content-type', 'application/json');
-
-      const params = {
-        username: form.username.value,
-        avatar_url: form.avatar.value,
-        content: form.message.value
-      }
-
-      request.send(JSON.stringify(params));
-
-      form.username.value = "";
-      form.avatar.value = "";
-      form.message.value = "";
-    }
-  </script>
 </html>

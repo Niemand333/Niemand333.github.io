@@ -1,0 +1,95 @@
+body {
+    background-color: hsl(220, 8%, 23%);
+    color: #dcddde;
+    margin: 0;
+    padding: 0;
+
+}
+
+.text-input {
+    background-color: #2f3136;
+    border: 1px solid #2f3136;
+    border-radius: 5px;
+    color: #dcddde;
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+}
+
+.form-grid {
+    display: grid;;
+    grid-gap: 5px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.channels {
+    grid-row: 4;
+    grid-column: 1 ;
+
+    margin: auto;
+
+    
+    background-color: #7289da;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.submit {
+    grid-row: 5;
+    grid-column: 1;
+    width: fit-content;
+
+    margin: auto;
+
+    background-color: #7289da;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.submit:hover {
+    background-color: #677bc4;
+}
+
+
+.username {
+    margin-left: 70px;
+
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.avatar {
+    display: none;
+
+    z-index: 1;
+
+    position: absolute;
+
+    margin-top: -30px;
+    margin-left: 60px;
+     
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    border-radius: 5px;
+}
+
+
+.message {
+    margin-bottom: 10px;
+
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#avatar-preview {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+
+    grid-row: 1;
+    grid-column: 1;
+}

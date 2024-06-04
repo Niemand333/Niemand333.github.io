@@ -1,0 +1,32 @@
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.project-grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 300px;
+}
+
+button.project-grid-item {
+    font-family: 'JetBrains Mono', monospace;
+
+    text-align: center;
+    padding: 10px 10px;
+    margin: auto;
+    background-color: rgb(68, 119, 206);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    
+    border: none;
+    border-radius: 5px;
+}

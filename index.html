@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>voidspace</title>
-        <link rel="stylesheet" href="design.css">
-    </head>
-    <body>
-        <h1 class="header">voidspace</h1>
-        <div class="text">
-            <!--p class="text">Welcome to VoidSpace</p!-->
-            <br>
-            <h2>Projects</h2>
-            <p><a class="link" href="/discordWebhook.html">Send Discord Messages</a></divp>
-        </div>
-    </body>
+
+<head>
+	<title>voidspace</title>
+	<link rel="stylesheet" href="design.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="sidebar.css">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+	<div class="sidebar">
+		<a class="active" href="/">Home</a>
+		<a href="/discordWebhook.html">W.H.</a>
+		<a href="/discordBot.html">Bot</a>
+	</div>
+
+	<div class="content">
+		<h1 class="header">voidspace</h1>
+
+		<br>
+		<h2>Projects</h2>
+		<br>
+
+		<div class="project-grid">
+			<button class="project-grid-item" onclick="location.href = '/discordWebhook.html';">
+				<h3>Discord Webhook</h3>
+				<p>Send messages to Discord channels</p>
+			</button>
+			<button class="project-grid-item" onclick="location.href = '/discordBot.html';">
+				<h3>Discord Bot</h3>
+				<p>Interact with Discord servers</p>
+			</button>
+		</div>
+	</div>
+	<script src="script.js"></script>
+
+</body>
+
 </html>
